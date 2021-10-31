@@ -9,7 +9,7 @@
 
 <div id="digimonList">
   <mat-card id="digimonCard" *ngFor="let digimon of data">
-    <mat-card-title>{{digimon.name}}</mat-card-title>
+    <mat-card-title id="digimonCardTitle">{{digimon.name}}</mat-card-title>
     <mat-card-subtitle>{{digimon.level}}</mat-card-subtitle>
     <div id="digimonDiv">
       <img id="digimonImage" mat-card-image src="{{digimon.img}}">
