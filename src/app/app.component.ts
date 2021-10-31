@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Digivice';
+  public data:any = [];
+  constructor(private http: HttpClient) {
+    
+  }
+
+  getData(){
+    const url ='https://digimon-api.vercel.app/api/digimon'
+    this.http.get(url).subscribe((res)=>{
+      this.data = res
+    })
+  }
+
 }

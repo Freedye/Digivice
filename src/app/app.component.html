@@ -1,0 +1,18 @@
+<p>
+  <mat-toolbar>
+   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Digivice</span>
+</mat-toolbar>
+</p>
+
+<button mat-raised-button (click)="getData()">Get digimon data</button>
+
+<div id="digimonList">
+  <mat-card id="digimonCard" *ngFor="let digimon of data">
+    <mat-card-title>{{digimon.name}}</mat-card-title>
+    <mat-card-subtitle>{{digimon.level}}</mat-card-subtitle>
+    <img id="digimonImage" mat-card-image src="{{digimon.img}}">
+  </mat-card>
+</div>
