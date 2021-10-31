@@ -7,8 +7,6 @@
 </mat-toolbar>
 </p>
 
-<button mat-raised-button (click)="getData()">Get digimon data</button>
-
 <div id="digimonList">
   <mat-card id="digimonCard" *ngFor="let digimon of data">
     <mat-card-title>{{digimon.name}}</mat-card-title>

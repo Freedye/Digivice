@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'Digivice';
   public data:any = [];
   constructor(private http: HttpClient) {
-    
+    this.getData();
   }
 
   getData(){
