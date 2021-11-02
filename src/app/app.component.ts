@@ -8,7 +8,11 @@ import { HttpClient } from "@angular/common/http";
 })
 export class AppComponent {
   title = 'Digivice';
+
   public data:any = [];
+  public detailsData:any = [];
+  public showPopup:boolean = false;
+
   constructor(private http: HttpClient) {
     this.getData();
   }
@@ -17,6 +21,14 @@ export class AppComponent {
     const url ='https://digimon-api.vercel.app/api/digimon'
     this.http.get(url).subscribe((res)=>{
       this.data = res
+    })
+  }
+
+  loadDigimonCard(digimonName: any) {
+    const url ='https://digimon-api.herokuapp.com/api/digimon/name/' + digimonName;
+    this.http.get(url).subscribe((res)=>{
+      this.detailsData = res
+      this.showPopup = ! this.showPopup;
     })
   }
 

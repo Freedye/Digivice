@@ -8,11 +8,21 @@
 </p>
 
 <div id="digimonList">
-  <mat-card id="digimonCard" *ngFor="let digimon of data">
+  <mat-card id="digimonCard" (click)="loadDigimonCard(digimon.name)" *ngFor="let digimon of data">
     <mat-card-title id="digimonCardTitle">{{digimon.name}}</mat-card-title>
     <mat-card-subtitle>{{digimon.level}}</mat-card-subtitle>
     <div id="digimonDiv">
       <img id="digimonImage" mat-card-image src="{{digimon.img}}">
+    </div>
+  </mat-card>
+</div>
+
+<div *ngIf="showPopup" class="digimonDetails">
+  <mat-card class = "digimonDetailsCard" *ngFor="let digimonDetails of detailsData">
+    <mat-card-title class="digimonDetailsName">{{digimonDetails.name}}</mat-card-title>
+    <mat-card-subtitle>{{digimonDetails.level}}</mat-card-subtitle>
+    <div class="digimonDetailsImageDiv">
+      <img class="digimonDetailsImage" mat-card-image src="{{digimonDetails.img}}">
     </div>
   </mat-card>
 </div>
