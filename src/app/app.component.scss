@@ -39,13 +39,12 @@
     .digimonDetailsCard {
         width: 500px;
         height: 500px;
-    }
 
-    .closeButton {
-        display: flex;
-        justify-content: right;
-        align-items: center;
-
+        .digimonCardHeader {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
     }
 
     .digimonDetailsImageDiv {
