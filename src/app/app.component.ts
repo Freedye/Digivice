@@ -32,4 +32,7 @@ export class AppComponent {
     })
   }
 
+  closePopup() {
+    this.showPopup = ! this.showPopup;
+  }
 }

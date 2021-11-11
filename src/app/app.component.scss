@@ -5,6 +5,7 @@
         width: 150px;
         height: 150px;
         margin: 24px;
+        cursor: pointer;
 
         #digimonCardTitle {
             font-size: 16px;
@@ -38,6 +39,13 @@
     .digimonDetailsCard {
         width: 500px;
         height: 500px;
+    }
+
+    .closeButton {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+
     }
 
     .digimonDetailsImageDiv {
