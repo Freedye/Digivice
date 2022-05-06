@@ -49,10 +49,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
+import { PopupComponentComponent } from './popup-component/popup-component.component';
+import { MenuComponentComponent } from './menu-component/menu-component.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PopupComponentComponent,
+    MenuComponentComponent
   ],
   imports: [
     BrowserModule,

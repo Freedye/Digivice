@@ -10,8 +10,8 @@ export class AppComponent {
   title = 'Digivice';
 
   public data:any = [];
-  public detailsData:any = [];
   public showPopup:boolean = false;
+  public popupData:any = [];
 
   constructor(private http: HttpClient) {
     this.getData();
@@ -20,19 +20,19 @@ export class AppComponent {
   getData(){
     const url ='https://digimon-api.vercel.app/api/digimon'
     this.http.get(url).subscribe((res)=>{
-      this.data = res
+      this.data = res;
     })
   }
 
   loadDigimonCard(digimonName: any) {
     const url ='https://digimon-api.herokuapp.com/api/digimon/name/' + digimonName;
     this.http.get(url).subscribe((res)=>{
-      this.detailsData = res
+      this.popupData = res;
       this.showPopup = ! this.showPopup;
     })
   }
 
-  closePopup() {
-    this.showPopup = ! this.showPopup;
+  setShowPopupValue(value: boolean) {
+    this.showPopup = value;
   }
 }

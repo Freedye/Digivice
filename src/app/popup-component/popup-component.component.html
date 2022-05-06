@@ -1,0 +1,18 @@
+<div *ngIf="showPopup" class="digimonDetails">
+    <mat-card class = "digimonDetailsCard" *ngFor="let digimonDetails of popupData">
+      <div class="digimonCardHeader">
+        <div class="digimonDetailsTitle">
+          <mat-card-title class="digimonDetailsName">{{digimonDetails.name}}</mat-card-title>
+          <mat-card-subtitle>{{digimonDetails.level}}</mat-card-subtitle>
+        </div>
+        <div class="closeButton">
+          <button mat-icon-button (click)="closePopup()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="digimonDetailsImageDiv">
+        <img class="digimonDetailsImage" mat-card-image src="{{digimonDetails.img}}">
+      </div>
+    </mat-card>
+</div>
