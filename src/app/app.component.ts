@@ -10,6 +10,8 @@ export class AppComponent {
   title = 'Digivice';
 
   public data:any = [];
+  public dataBackup:any = [];
+  public searchedData:any = [];
   public searchValue = '';
 
   constructor(private http: HttpClient) {
@@ -24,12 +26,24 @@ export class AppComponent {
   }
 
   searchDigimon(value: any) {
+    if(this.dataBackup.length > 0) {
+      this.data = this.dataBackup;
+    } else {
+      this.dataBackup = this.data;
+    }
     let digimonList = this.data;
+    let searchedDigimonList:any = [];
     
     for(let i = 0; i < digimonList.length; i++) {
       if(digimonList[i].name.includes(value)) {
-        alert(digimonList[i].name);
+        searchedDigimonList.push(digimonList[i]);
       }
+    }
+    
+    if(searchedDigimonList) {
+      this.data = searchedDigimonList;
+    } else {
+      this.data = '';
     }
   }
 }
