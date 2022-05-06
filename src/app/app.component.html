@@ -1,22 +1,14 @@
-<p>
-  <mat-toolbar>
-   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
+<mat-toolbar class="toolbar">
   <span>Digivice</span>
+  <mat-form-field class="searchBox" >
+    <mat-label>Ricerca</mat-label>
+    <input matInput type="text" (change)="searchDigimon(searchValue)" [(ngModel)]="searchValue">
+    <button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
 </mat-toolbar>
-</p>
 
-<div id="digimonList">
-  <mat-card id="digimonCard" (click)="loadDigimonCard(digimon.name)" *ngFor="let digimon of data">
-    <mat-card-title id="digimonCardTitle">{{digimon.name}}</mat-card-title>
-    <mat-card-subtitle>{{digimon.level}}</mat-card-subtitle>
-    <div id="digimonDiv">
-      <img id="digimonImage" mat-card-image src="{{digimon.img}}">
-    </div>
-  </mat-card>
-</div>
-
-<div *ngIf="showPopup" class="digimonDetails">
-  <app-popup-component [popupData] = "popupData" [showPopup] = "showPopup"  (closePopupEvent)="setShowPopupValue($event)"></app-popup-component>
+<div>
+  <app-digimon-cards id="digimonList" [data] = data></app-digimon-cards>
 </div>

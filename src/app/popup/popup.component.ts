@@ -1,12 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-popup-component',
-  templateUrl: './popup-component.component.html',
-  styleUrls: ['./popup-component.component.scss']
+  selector: 'app-popup',
+  templateUrl: './popup.component.html',
+  styleUrls: ['./popup.component.scss']
 })
 
-export class PopupComponentComponent implements OnInit {
+export class PopupComponent implements OnInit {
 
   @Input() popupData:any = [];
   @Input() showPopup:boolean = false;

@@ -1,0 +1,21 @@
+#digimonCard {
+    width: 150px;
+    height: 150px;
+    margin: 24px;
+    cursor: pointer;
+
+    #digimonCardTitle {
+        font-size: 16px;
+    }
+    
+    #digimonDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        #digimonImage {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
