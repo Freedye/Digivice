@@ -35,7 +35,7 @@ export class AppComponent {
     let searchedDigimonList:any = [];
     
     for(let i = 0; i < digimonList.length; i++) {
-      if(digimonList[i].name.includes(value)) {
+      if(digimonList[i].name.toLowerCase().indexOf(value) > -1) {
         searchedDigimonList.push(digimonList[i]);
       }
     }
